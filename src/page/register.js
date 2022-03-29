@@ -43,8 +43,9 @@ export function RightData() {
   return (
     <div className="Right">
       <div className="Login">
-        <h1>Login</h1>
+        <h1>Register</h1>
         <Form>
+          <Form.Control className="mb-3" type="text" placeholder="Enter name" />
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control type="email" placeholder="Enter email" />
           </Form.Group>
@@ -54,7 +55,7 @@ export function RightData() {
           </Form.Group>
           <div className="d-grid gap-2 mt-5">
             <Button variant="danger" size="lg">
-              Login
+              Register
             </Button>
           </div>
         </Form>
@@ -63,7 +64,7 @@ export function RightData() {
   );
 }
 
-export function Login() {
+export function Register() {
   return (
     <>
       <LeftData />
