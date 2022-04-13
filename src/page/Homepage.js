@@ -1,7 +1,7 @@
 import logo from "../logo.svg";
 import "../styling/homepage.css";
 import { Button, Navbar, Nav, Container, Card } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, To } from "react-router-dom";
 
 const divStyle = {
   color: "white",
@@ -30,9 +30,17 @@ export function NavbarList() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav>
-            <Nav.Link href="#deets">Complain</Nav.Link>
-            <Nav.Link href="#features">Profile</Nav.Link>
-            <Nav.Link href="#pricing" onClick={handleClickLogout}>
+            <Nav.Link style={{ color: "white" }} href="#deets">
+              Complain
+            </Nav.Link>
+            <Nav.Link style={{ color: "white" }} href="/profile">
+              Profile
+            </Nav.Link>
+            <Nav.Link
+              style={{ color: "white" }}
+              href="#pricing"
+              onClick={handleClickLogout}
+            >
               Logout
             </Nav.Link>
           </Nav>
@@ -50,12 +58,8 @@ export function Product() {
         <Card bg="dark" style={{ width: "18rem" }}>
           <Card.Img variant="top" src="holder.js/100px180" />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Card.Title style={{ color: "red" }}>Card Title</Card.Title>
+            <Card.Text>Rp. Stock:</Card.Text>
           </Card.Body>
         </Card>
       </div>

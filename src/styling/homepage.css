@@ -4,4 +4,45 @@
 
 .product h3 {
     margin-bottom: 30px;
+    color: red;
+}
+
+Card.Title {
+    color: white;
+}
+
+.leftprofile {
+    display: flex;
+    flex-direction: row;
+    margin : 40px 70px;
+}
+
+.profileList ul {
+    list-style: none;
+    margin-top: 80px;
+}
+
+.profileList h5 {
+    color:rgb(207, 15, 15);
+}
+
+.transaction {
+    margin-left: 300px;
+}
+
+.transaction .card {
+    width: 600px; 
+    background-color: rgb(73, 71, 71);
+    flex-direction: row;
+}
+
+.card .transactionInfo {
+    line-height: 1;
+    padding-top: 15px;
+
+}
+
+.card .transactionInfo p {
+    font-size: small;
+    line-height: 0.5;
 }
