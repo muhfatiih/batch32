@@ -34,7 +34,7 @@ Form {
   padding: 20px;
 }
 
-.App {
+.app {
   display: flex;
   flex-direction: row;
 }
