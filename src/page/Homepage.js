@@ -2,7 +2,7 @@ import logo from "../logo.svg";
 import "../styling/homepage.css";
 import { Button, Navbar, Nav, Container, Card } from "react-bootstrap";
 import { useNavigate, To } from "react-router-dom";
-
+import { listitems } from "../components/shopitems";
 const divStyle = {
   color: "white",
 };
@@ -16,7 +16,7 @@ export function NavbarList() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/homepage">
           {" "}
           <img
             src={logo}
@@ -59,7 +59,8 @@ export function Product() {
           <Card.Img variant="top" src="holder.js/100px180" />
           <Card.Body>
             <Card.Title style={{ color: "red" }}>Card Title</Card.Title>
-            <Card.Text>Rp. Stock:</Card.Text>
+            <Card.Text>Rp. </Card.Text>
+            <Card.Text>Stock:</Card.Text>
           </Card.Body>
         </Card>
       </div>
