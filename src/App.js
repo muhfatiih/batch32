@@ -4,6 +4,7 @@ import { Register } from "./page/register";
 import { Homepage } from "./page/Homepage";
 import { DetailItem } from "./page/detailproduct";
 import { ProfilePage } from "./page/profile";
+import { Category } from "./page/category";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, Link } from "react-router-dom";
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/homepage" element={<Homepage />} />
         <Route path="/detail-product/:id" element={<DetailItem />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/category" element={<Category />} />
       </Routes>
     </>
   );
