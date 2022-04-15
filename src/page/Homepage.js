@@ -1,8 +1,8 @@
 import logo from "../logo.svg";
 import "../styling/homepage.css";
-import { Button, Navbar, Nav, Container, Card } from "react-bootstrap";
+import { Button, Navbar, Nav, Container, Card, Row } from "react-bootstrap";
 import { useNavigate, To } from "react-router-dom";
-import { listitems } from "../components/shopitems";
+import { listItems } from "../components/shopitems";
 const divStyle = {
   color: "white",
 };
@@ -52,17 +52,32 @@ export function NavbarList() {
 
 export function Product() {
   return (
-    <div className="product">
-      <h3>Product</h3>
-      <div>
-        <Card bg="dark" style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
-          <Card.Body>
-            <Card.Title style={{ color: "red" }}>Card Title</Card.Title>
-            <Card.Text>Rp. </Card.Text>
-            <Card.Text>Stock:</Card.Text>
-          </Card.Body>
-        </Card>
+    <div style={{ marginLeft: "30px", marginTop: "50px" }}>
+      <h3>Product</h3>{" "}
+      <div
+        className="productlist"
+        style={{ display: "flex", flexDirection: "row" }}
+      >
+        {" "}
+        {listItems.map((items) => {
+          return (
+            <div className="product">
+              {" "}
+              <div>
+                <Card bg="dark" style={{ width: "18rem" }}>
+                  <Card.Img variant="top" src="holder.js/100px180" />
+                  <Card.Body>
+                    <Card.Title style={{ color: "red" }}>
+                      {items.name}
+                    </Card.Title>
+                    <Card.Text>Rp. </Card.Text>
+                    <Card.Text>Stock:</Card.Text>
+                  </Card.Body>
+                </Card>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
