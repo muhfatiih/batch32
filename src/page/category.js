@@ -1,11 +1,35 @@
 import { Button, Table, Card, Row } from "react-bootstrap";
 import { NavbarListAdmin } from "./Homepage";
+import ReactDeleteRow from "react-delete-row";
+import { category } from "../components/categoryitems";
+import { Modal } from "bootstrap";
+
+// export const
+
+export function ModalDelete(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Modal heading
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <p>apakah kamu yakin?</p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>iya</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
 
 export function Category() {
-  const handleDeleteRow = (btn) => {
-    var row = btn.parentNode.parentNode;
-    row.parentNode.removeChild(row);
-  };
   return (
     <div>
       <NavbarListAdmin />{" "}
@@ -23,35 +47,50 @@ export function Category() {
           >
             <thead>
               <tr>
-                <th style={{ width: "30%" }}>No</th>
-                <th style={{ width: "30%" }}>Category Name</th>
+                <th scope="col" style={{ width: "30%" }}>
+                  No
+                </th>
+                <th scope="col" style={{ width: "30%" }}>
+                  Category Name
+                </th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Computer</td>
-                <td>
-                  <Button
-                    variant="success"
-                    size="sm"
-                    active
-                    style={{ padding: "3px 40px" }}
+              {category.map((item, i) => {
+                return (
+                  <ReactDeleteRow
+                    key={i}
+                    data={item}
+                    deleteElement={
+                      <Button
+                        variant="danger"
+                        size="sm"
+                        active
+                        style={{ padding: "3px 30px" }}
+                      >
+                        Delete
+                      </Button>
+                    }
+                    onDelete={(item) => {
+                      return ModalDelete;
+                    }}
                   >
-                    Edit
-                  </Button>{" "}
-                  <Button
-                    variant="danger"
-                    size="sm"
-                    active
-                    onClick={handleDeleteRow()}
-                    style={{ padding: "3px 30px" }}
-                  >
-                    Delete
-                  </Button>
-                </td>
-              </tr>
+                    <td>{item.no}</td>
+                    <td>{item.name}</td>
+                    <td>
+                      <Button
+                        variant="success"
+                        size="sm"
+                        active
+                        style={{ padding: "3px 40px" }}
+                      >
+                        Edit
+                      </Button>{" "}
+                    </td>
+                  </ReactDeleteRow>
+                );
+              })}
             </tbody>
           </Table>
         </div>
