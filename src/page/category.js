@@ -1,35 +1,13 @@
 import { Button, Table, Card, Row } from "react-bootstrap";
 import { NavbarListAdmin } from "./Homepage";
 import ReactDeleteRow from "react-delete-row";
+import { useEffect, useState } from "react";
 import { category } from "../components/categoryitems";
-import { Modal } from "bootstrap";
-
-// export const
-
-export function ModalDelete(props) {
-  return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <p>apakah kamu yakin?</p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>iya</Button>
-      </Modal.Footer>
-    </Modal>
-  );
-}
+import "../styling/category.css";
+import { ModalShow } from "../components/modal";
 
 export function Category() {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <div>
       <NavbarListAdmin />{" "}
@@ -43,7 +21,7 @@ export function Category() {
             hover
             className="categoryTable"
             variant="dark"
-            style={{ width: "100%", marginTop: "20px", height: "50px" }}
+            style={{ width: "100%", marginTop: "20px", height: "70px" }}
           >
             <thead>
               <tr>
@@ -56,45 +34,49 @@ export function Category() {
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody>
-              {category.map((item, i) => {
-                return (
-                  <ReactDeleteRow
-                    key={i}
-                    data={item}
-                    deleteElement={
-                      <Button
-                        variant="danger"
-                        size="sm"
-                        active
-                        style={{ padding: "3px 30px" }}
-                      >
-                        Delete
-                      </Button>
-                    }
-                    onDelete={(item) => {
-                      return ModalDelete;
-                    }}
-                  >
+            {category.map((item, i) => {
+              return (
+                <tbody style={{ height: "50px" }}>
+                  <>
                     <td>{item.no}</td>
                     <td>{item.name}</td>
                     <td>
-                      <Button
-                        variant="success"
-                        size="sm"
-                        active
-                        style={{ padding: "3px 40px" }}
-                      >
-                        Edit
-                      </Button>{" "}
+                      <div>
+                        <button
+                          variant="success"
+                          size="sm"
+                          active
+                          style={{ padding: "3px 40px" }}
+                        >
+                          Edit
+                        </button>{" "}
+                        <button
+                          variant="danger"
+                          size="sm"
+                          active
+                          onClick={() => setOpenModal(true)}
+                          style={{ padding: "3px 30px" }}
+                        >
+                          Delete
+                        </button>
+                        <ModalShow
+                          open={openModal}
+                          onClose={() => setOpenModal(false)}
+                        />
+                      </div>{" "}
                     </td>
-                  </ReactDeleteRow>
-                );
-              })}
-            </tbody>
+                  </>
+                </tbody>
+              );
+            })}
           </Table>
         </div>
       </div>
     </div>
   );
+}
+
+export function deleteArray(index: number) {
+  const deleteItems = [...Category];
+  deleteItems.splice(index, 1);
 }

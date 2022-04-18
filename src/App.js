@@ -7,6 +7,7 @@ import { ProfilePage } from "./page/profile";
 import { Category } from "./page/category";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, Link } from "react-router-dom";
+import { ModalShow } from "./components/modal";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
         <Route path="/detail-product/:id" element={<DetailItem />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/category" element={<Category />} />
+        <Route path="/modal" element={<ModalShow />} />
       </Routes>
     </>
   );
