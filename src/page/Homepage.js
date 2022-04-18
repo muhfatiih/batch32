@@ -3,6 +3,8 @@ import "../styling/homepage.css";
 import { Button, Navbar, Nav, Container, Card, Row } from "react-bootstrap";
 import { useNavigate, To } from "react-router-dom";
 import { listItems } from "../components/shopitems";
+// import { Category } from "./page/category";
+// import { Listproductitems } from "./page/listproduct";
 const divStyle = {
   color: "white",
 };
@@ -76,10 +78,10 @@ export function NavbarListAdmin() {
             <Nav.Link style={{ color: "white" }} href="#deets">
               Complain
             </Nav.Link>
-            <Nav.Link style={{ color: "white" }} href="/profile">
+            <Nav.Link style={{ color: "white" }} href="/category">
               Category
             </Nav.Link>
-            <Nav.Link style={{ color: "white" }} href="/profile">
+            <Nav.Link style={{ color: "white" }} href="/list-product">
               Product
             </Nav.Link>
             <Nav.Link

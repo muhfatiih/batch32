@@ -2,17 +2,17 @@ import { Button, Table, Card, Row } from "react-bootstrap";
 import { NavbarListAdmin } from "./Homepage";
 import ReactDeleteRow from "react-delete-row";
 import { useEffect, useState } from "react";
-import { category } from "../components/categoryitems";
+import { listItems } from "../components/shopitems";
 import "../styling/category.css";
 import { ModalShow } from "../components/modal";
 
-export function Category() {
+export function Listproductitems() {
   const [openModal, setOpenModal] = useState(false);
   return (
     <div>
       <NavbarListAdmin />{" "}
       <div style={{ margin: "100px 70px" }}>
-        <h4 style={{ color: "white" }}>List Category</h4>
+        <h4 style={{ color: "white" }}>List </h4>
         <div>
           {" "}
           <Table
@@ -25,21 +25,25 @@ export function Category() {
           >
             <thead>
               <tr>
-                <th scope="col" style={{ width: "30%" }}>
-                  No
-                </th>
-                <th scope="col" style={{ width: "30%" }}>
-                  Category Name
-                </th>
+                <th scope="col">No</th>
+                <th>Photo</th>
+                <th scope="col">Product Name</th>
+                <th>Product Desc</th>
+                <th>Price</th>
+                <th>Qty</th>
                 <th>Action</th>
               </tr>
             </thead>
-            {category.map((item, i) => {
+            {listItems.map((item, i) => {
               return (
                 <tbody style={{ height: "50px" }}>
                   <>
-                    <td>{item.no}</td>
+                    <td>{item.id}</td>
+                    <td></td>
                     <td>{item.name}</td>
+                    <td className="desc">{item.description}</td>
+                    <td>{item.price}</td>
+                    <td>{item.stock}</td>
                     <td>
                       <div>
                         <button

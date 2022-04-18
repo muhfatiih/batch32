@@ -5,42 +5,6 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Homepage } from "./Homepage";
 
-// export function LeftData() {
-//   return (
-//     <div className="Left">
-//       <div className="LeftInfo">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <div>
-//           <div className="Text">
-//             {" "}
-//             <h1>Easy,Fast and Reliable </h1>
-//             <p>
-//               Go shopping for merchandise, just go to dumb merch shopping. the
-//               biggest merchandise in Indonesia
-//             </p>
-//           </div>
-//         </div>
-//         <div className="Btn">
-//           <Button
-//             className="Btn mt-5 pe-5 ps-5 pt-1 pb-1"
-//             variant="danger"
-//             size="xl"
-//           >
-//             <a href="/">Login</a>
-//           </Button>{" "}
-//           <Button
-//             className="Btn mt-5 ms-3 pe-5 ps-5 pt-1 pb-1"
-//             variant=""
-//             size="xl"
-//           >
-//             <a href="/register">Register</a>
-//           </Button>{" "}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 export function LoginForm() {
   const [datas, setDatas] = useState({
     isLogin: false,
@@ -56,7 +20,7 @@ export function LoginForm() {
     e.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    if (item.email === email && item.password === password) {
+    if (email === "admin@email.com" && password === 123) {
       console.log("masuk");
       setDatas({
         isLogin: true,
@@ -64,6 +28,13 @@ export function LoginForm() {
           email,
           password,
         },
+      });
+      navigate("homepage");
+    } else if (item.email === email && item.password === password) {
+      setDatas({
+        isLogin: true,
+        email,
+        password,
       });
       navigate("homepage");
     }
