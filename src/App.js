@@ -7,26 +7,28 @@ import { ProfilePage } from "./page/profile";
 import { Category } from "./page/category";
 import { Listproductitems } from "./page/listproduct";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import { ModalShow } from "./components/modal";
-// import { PrivateRoute } from "../components/privateRoute";
+import { PrivateRoute } from "../components/privateRoute";
 import { EditForm } from "./page/editCategory";
 
 function App() {
   return (
-    <>
+    <Router>
       <Routes>
         <Route path="/" element={<LoginForm />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/homepage" element={<Homepage />} />
-        <Route path="/detail-product/:id" element={<DetailItem />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/edit" element={<EditForm />} />
-        <Route path="/category" element={<Category />} />
-        <Route path="/modal" element={<ModalShow />} />
-        <Route path="/list-product" element={<Listproductitems />} />
+        <Route path="/" element={<PrivateRoute />}>
+          <Route path="/homepage" element={<Homepage />} />
+          <Route path="/detail-product/:id" element={<DetailItem />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/edit-category" element={<EditForm />} />
+          <Route path="/category" element={<Category />} />
+          <Route path="/modal" element={<ModalShow />} />
+          <Route path="/list-product" element={<Listproductitems />} />
+        </Route>
       </Routes>
-    </>
+    </Router>
   );
 }
 

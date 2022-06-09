@@ -1,20 +1,26 @@
 import { Button, Form, Row, Col } from "react-bootstrap";
+import { NavbarList } from "./Homepage";
 
 export function EditForm() {
   return (
     <div>
-      {" "}
+      <NavbarList />
       <button>Upload image</button>
       <div>
-        {" "}
-        <Row>
-          <Form.Label column lg={2}>
-            Normal Text
-          </Form.Label>
+        <Col>
           <Col>
             <Form.Control type="text" placeholder="Normal text" />
           </Col>
-        </Row>
+          <Col>
+            <Form.Control type="text" placeholder="Normal text" />
+          </Col>{" "}
+          <Col>
+            <Form.Control type="text" placeholder="Normal text" />
+          </Col>{" "}
+          <Col>
+            <Form.Control type="text" placeholder="Normal text" />
+          </Col>
+        </Col>
       </div>
     </div>
   );
