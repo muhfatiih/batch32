@@ -1,4 +1,4 @@
-import { NavbarList } from "./Homepage";
+import { NavbarList, NavbarListcos } from "./Homepage";
 import keyboard from "../image/keyboard.jpg";
 import {
   Button,
@@ -13,7 +13,7 @@ import {
 export function DetailItem() {
   return (
     <div>
-      <NavbarList />
+      <NavbarListcos />
       <div
         className="itemcard"
         style={{

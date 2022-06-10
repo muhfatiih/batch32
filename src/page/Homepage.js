@@ -9,7 +9,7 @@ const divStyle = {
   color: "white",
 };
 
-export function NavbarList() {
+export function NavbarListcos() {
   let navigate = useNavigate();
   const handleClickLogout = () => {
     localStorage.clear();
@@ -134,7 +134,7 @@ export function Product() {
 export function Homepage() {
   return (
     <>
-      <NavbarList />
+      <NavbarListcos />
       <Product />
     </>
   );

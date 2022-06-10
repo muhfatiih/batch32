@@ -7,7 +7,7 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
-import { NavbarList } from "./Homepage";
+import { NavbarListcos } from "./Homepage";
 import person from "../image/person.jpg";
 import "../styling/homepage.css";
 import keyboard from "../image/keyboard.jpg";
@@ -90,7 +90,7 @@ export function Profile() {
 export function ProfilePage() {
   return (
     <>
-      <NavbarList />;
+      <NavbarListcos />;
       <Profile />
     </>
   );
