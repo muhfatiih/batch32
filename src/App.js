@@ -7,10 +7,17 @@ import { ProfilePage } from "./page/profile";
 import { Category } from "./page/category";
 import { Listproductitems } from "./page/listproduct";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  BrowserRouter as Router,
+  Link,
+  useLocation,
+} from "react-router-dom";
 import { ModalShow } from "./components/modal";
 import { PrivateRouteAdmin, PrivateRouteCos } from "./components/privateRoute";
 import { EditCategory, EditProduct } from "./page/editForm";
+// import "semantic-ui-css/semantic.min.css";
 
 function App() {
   return (
@@ -21,7 +28,7 @@ function App() {
       {/* costumer private page */}
       <Route element={<PrivateRouteCos />}>
         <Route path="/homepage" element={<Homepage />} />
-        <Route path="/detail-product/:id" element={<DetailItem />} />
+        <Route path="/detail-product/" element={<DetailItem />} />
         <Route path="/profile" element={<ProfilePage />} />
       </Route>
       {/* costumer private page end */}

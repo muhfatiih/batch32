@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { category } from "../components/categoryitems";
 import "../styling/category.css";
 import { ModalShow } from "../components/modal";
+import MaterialButton from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 export function Category() {
   const [openModal, setOpenModal] = useState(false);
@@ -13,6 +15,14 @@ export function Category() {
       <NavbarListAdmin />{" "}
       <div style={{ margin: "100px 70px" }}>
         <h4 style={{ color: "white" }}>List Category</h4>
+        <Link to="/edit-category" style={{ textDecoration: "none" }}>
+          <MaterialButton
+            variant="contained"
+            style={{ backgroundColor: "#388e3c", justifySelf: "right" }}
+          >
+            Add Category
+          </MaterialButton>
+        </Link>
         <div>
           {" "}
           <Table

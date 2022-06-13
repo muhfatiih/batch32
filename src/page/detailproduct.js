@@ -9,8 +9,10 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
+import { useLocation, Link } from "react-router-dom";
 
 export function DetailItem() {
+  const { state } = useLocation();
   return (
     <div>
       <NavbarListcos />
@@ -35,13 +37,7 @@ export function DetailItem() {
             <li>- Hotswapable </li>
           </ul>
           <br />
-          <p>
-            Mechanical keyboards are computer keyboards that have switches under
-            each key, rather than the rubber membranes used in most common
-            keyboards. Physical switches give mechanical keyboards a less
-            "mushy" feel — every keypress can be clearly felt, making them
-            perfect for precise and accurate typing
-          </p>
+          <p>{state.listItems.description}</p>
           <br />
           <h4 style={{ textAlign: "end", color: "red" }}>Rp.500.000</h4>
           <br />

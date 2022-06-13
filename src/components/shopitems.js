@@ -9,7 +9,7 @@ export const listItems = [
   },
   {
     id: "2",
-    name: "keyboard",
+    name: "Keyboard",
     price: "Rp.500.000",
     stock: "60",
     description:

@@ -1,7 +1,7 @@
 import logo from "../logo.svg";
 import "../styling/homepage.css";
 import { Button, Navbar, Nav, Container, Card, Row } from "react-bootstrap";
-import { useNavigate, To } from "react-router-dom";
+import { useNavigate, To, Link } from "react-router-dom";
 import { listItems } from "../components/shopitems";
 // import { Category } from "./page/category";
 // import { Listproductitems } from "./page/listproduct";
@@ -35,7 +35,7 @@ export function NavbarListcos() {
             <Nav.Link style={{ color: "white" }} href="#deets">
               Complain
             </Nav.Link>
-            <Nav.Link style={{ color: "white" }} href="/profile">
+            <Nav.Link style={{ color: "white" }} to="/profile">
               Profile
             </Nav.Link>
             <Nav.Link
@@ -112,16 +112,24 @@ export function Product() {
             <div className="product">
               {" "}
               <div>
-                <Card bg="dark" style={{ width: "18rem" }}>
-                  <Card.Img variant="top" src="holder.js/100px180" />
-                  <Card.Body>
-                    <Card.Title style={{ color: "red" }}>
-                      {items.name}
-                    </Card.Title>
-                    <Card.Text>Rp. </Card.Text>
-                    <Card.Text>Stock:</Card.Text>
-                  </Card.Body>
-                </Card>
+                <Link
+                  to={{
+                    pathname: `/detail-Product/${items.id}`,
+                    state: { listItems: items },
+                  }}
+                  style={{ textDecoration: "none" }}
+                >
+                  <Card bg="dark" style={{ width: "18rem" }}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title style={{ color: "red" }}>
+                        {items.name}
+                      </Card.Title>
+                      <Card.Text>{items.price} </Card.Text>
+                      <Card.Text>Stock:{items.stock}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Link>
               </div>
             </div>
           );

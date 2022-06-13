@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { listItems } from "../components/shopitems";
 import "../styling/category.css";
 import { ModalShow } from "../components/modal";
+import MaterialButton from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 export function Listproductitems() {
   const [openModal, setOpenModal] = useState(false);
@@ -12,7 +14,18 @@ export function Listproductitems() {
     <div>
       <NavbarListAdmin />{" "}
       <div style={{ margin: "100px 70px" }}>
-        <h4 style={{ color: "white" }}>List </h4>
+        <div style={{ width: "100%" }}>
+          <h4 style={{ color: "white" }}>List </h4>
+          <Link to="/edit-product" style={{ textDecoration: "none" }}>
+            <MaterialButton
+              variant="contained"
+              // LinkComponent={{ href: "/edit-product" }}
+              style={{ backgroundColor: "#388e3c", justifySelf: "right" }}
+            >
+              Add Product
+            </MaterialButton>
+          </Link>
+        </div>
         <div>
           {" "}
           <Table

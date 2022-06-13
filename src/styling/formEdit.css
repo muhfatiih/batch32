@@ -1,0 +1,54 @@
+
+.formProduct {
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 50px;
+}
+
+form {
+    flex-direction: column;
+}
+
+.formInputPro {
+    margin-top: 40px;
+}
+
+.formInputPro input{
+    margin-bottom: 20px;
+    width: 100%;
+    line-height: 40px;
+    border-radius: 7px;
+}
+
+.formInputPro textarea {
+    margin-bottom: 20px;
+    width: 100%;
+    line-height: 50px;
+    border-radius: 7px;
+    resize: none;
+}
+
+/* Edit Form Product End*/
+
+/* Edit form category */
+
+.formInputCategory {
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 50px;
+}
+
+.formInputCategory input {
+    margin-bottom: 20px;
+    margin-top: 30px;
+    width: 100%;
+    line-height: 40px;
+    border-radius: 7px;
+
+}
+
+/* Edit from category end */
